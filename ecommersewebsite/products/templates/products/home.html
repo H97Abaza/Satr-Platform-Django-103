@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Carousel -->
+    <div class="container">
+        <div id="carouselExampleDark"
+             class="carousel carousel-dark slide"
+             data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button"
+                        data-bs-target="#carouselExampleDark"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1">
+                </button>
+                <button type="button"
+                        data-bs-target="#carouselExampleDark"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                <button type="button"
+                        data-bs-target="#carouselExampleDark"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="{% static 'images/Furniture.jpg' %}"
+                         class="d-block w-100"
+                         alt="..."/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>New Items, New Collection!</h4>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/Clothes.jpg' %}"
+                         class="d-block w-100"
+                         alt="..."/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>40% Off</h4>
+                        <p>Spring/Summer Clothing</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'images/Electronics.jpg' %}"
+                         class="d-block w-100"
+                         alt="..."/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h4>Buy 1 & Get 1 for Free</h4>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <div class="row p-3">
+                    <div class="col-md-5 col-sm-6">
+                        <a href="{% url 'products' %}">
+                            <img src="{% static 'images/Category1.gif' %}"
+                                 class="card-img"
+                                 alt="Category1.gif"/>
+                        </a>
+                    </div>
+                    <div class="col-md-7 d-flex align-items-center">
+                        <p class="card-title text-center text-uppercase h3">Electronics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="row p-3">
+                    <div class="col-md-5 col-sm-6">
+                        <a href="{% url 'products' %}">
+                            <img src="{% static 'images/Category2.gif' %}"
+                                 class="card-img-top"
+                                 alt="Category2.gif"/>
+                        </a>
+                    </div>
+                    <div class="col-md-7 d-flex align-items-center">
+                        <p class="card-title text-center text-uppercase h3">Furniture</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="row p-3">
+                    <div class="col-md-5 col-sm-6">
+                        <a href="{% url 'products' %}">
+                            <img src="{% static 'images/Category3.gif' %}"
+                                 class="card-img-top"
+                                 alt="Category3.gif"/>
+                        </a>
+                    </div>
+                    <div class="col-md-7 d-flex align-items-center">
+                        <p class="card-title text-center text-uppercase h3">clothes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
