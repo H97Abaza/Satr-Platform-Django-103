@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0des6w&tv-n$wulf22#w8ame85$v7q_%a$5uu7km7ux=&vdu%3'
+SECRET_KEY =os.environ.get("SECRET_KEY", 'django-insecure-0des6w&tv-n$wulf22#w8ame85$v7q_%a$5uu7km7ux=&vdu%3')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,12 +78,9 @@ WSGI_APPLICATION = 'ecommercewebsite.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ecommercedb',
-        'USER': 'postgres',
-        'PASSWORD':os.environ.get("DB_PASSWORD") ,
-        "HOST":'localhost'
+     "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR/"db.sqlite3",
     }
 }
 
